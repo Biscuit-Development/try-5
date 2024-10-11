@@ -1,38 +1,40 @@
-// Set the correct password
-const correctPassword = "Titanic1912";
+// Password check and popup handling
+const correctPassword = "Titanic1912"; // Set your desired password
+const submitButton = document.getElementById("submit-button");
+const passwordInput = document.getElementById("password-input");
+const popup = document.getElementById("popup");
+const closeButton = document.getElementById("close-button");
+const sendButton = document.getElementById("send-button");
+const messageInput = document.getElementById("message-input");
+const chatArea = document.getElementById("chat-area");
 
-function checkPassword() {
-    const inputPassword = document.getElementById("password").value;
-    if (inputPassword === correctPassword) {
-        document.getElementById("chat-popup").style.display = "block";
+// Show popup if password is correct
+submitButton.onclick = function() {
+    if (passwordInput.value === correctPassword) {
+        popup.style.display = "block";
+        passwordInput.value = ""; // Clear the password field
     } else {
-        alert("Incorrect password. Try again!");
+        alert("Incorrect password. Please try again.");
     }
 }
 
-function sendMessage() {
-    const chatBox = document.getElementById("chat-box");
-    const chatInput = document.getElementById("chat-input");
-    const message = chatInput.value.trim();
+// Close the popup
+closeButton.onclick = function() {
+    popup.style.display = "none";
+}
 
+// Handle sending messages
+sendButton.onclick = function() {
+    const message = messageInput.value;
     if (message) {
-        // Display the message
-        const messageElement = document.createElement("p");
-        messageElement.textContent = `You: ${message}`;
-        chatBox.appendChild(messageElement);
+        chatArea.value += "You: " + message + "\n"; // Display user's message
+        messageInput.value = ""; // Clear input field
+    }
+}
 
-        // Clear the input field
-        chatInput.value = "";
-
-        // Scroll to the bottom of the chat
-        chatBox.scrollTop = chatBox.scrollHeight;
-
-        // For now, simulate a response from Mehul
-        setTimeout(() => {
-            const responseElement = document.createElement("p");
-            responseElement.textContent = "Mehul: Thanks for reaching out!";
-            chatBox.appendChild(responseElement);
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }, 1000);
+// Close popup when clicking outside of it
+window.onclick = function(event) {
+    if (event.target === popup) {
+        popup.style.display = "none";
     }
 }
