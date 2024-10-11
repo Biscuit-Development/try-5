@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+header, section {
+    margin: 20px 0;
+}
+
+#password-section {
+    margin-top: 40px;
+}
+
+#chat-popup {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#chat-box {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.hidden {
+    display: none;
+}
