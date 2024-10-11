@@ -15,23 +15,25 @@
         <section id="blog-content">
             <h2>The Tragic Voyage</h2>
             <p>Details about the Titanic incident...</p>
-            <!-- Add more blog content here -->
         </section>
         <section id="password-section">
-            <input type="password" id="password" placeholder="Enter password">
-            <button onclick="checkPassword()">Submit</button>
+            <h2>Enter Password to Chat</h2>
+            <input type="password" id="password-input" placeholder="Enter Password">
+            <button id="submit-button">Submit</button>
         </section>
     </main>
-    <div id="chat-popup" class="hidden">
-        <div class="chat-content">
-            <h3>Chat with Mehul</h3>
-            <div id="chat-box">
-                <!-- Messages will appear here -->
-            </div>
-            <input type="text" id="chat-input" placeholder="Type a message...">
-            <button onclick="sendMessage()">Send</button>
+
+    <!-- Popup Structure -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" id="close-button">&times;</span>
+            <h2>Chat</h2>
+            <textarea id="chat-area" rows="5" placeholder="Chat messages will appear here..." readonly></textarea>
+            <input type="text" id="message-input" placeholder="Type your message here...">
+            <button id="send-button">Send</button>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
